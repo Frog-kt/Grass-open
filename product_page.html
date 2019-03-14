@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{{head_title}}</title>
+    <link rel="stylesheet" href="./style/style_main.css">
+    <link rel="stylesheet" href="./style/style_body.css">
+    <link rel="stylesheet" href="./style/style_header.css">
+    <link rel="stylesheet" href="./style/style_search_bar.css">
+    <link rel="stylesheet" href="./style/style_product_page.css">
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="head">
+            <header>
+                <div id="header_nav">
+                    <a href="main.php"><img src="./img/logo.png" height="90px"></a>
+                </div>
+            </header>
+            {{head_list}}
+        </div>
+
+        <main>
+            {{contents}}
+        </main>
+
+        <footer>
+            <div id="copyright">
+                <sub>© 2018 GRASS</sub>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
