@@ -1,0 +1,84 @@
+@charset "utf-8";
+
+/*@import url("");*/
+
+
+
+div#change_user_data{
+    display: inline-block;
+    align-content: center;
+}
+
+.changes_box {
+    float: right;
+    width: 400px;
+    height: 300px;
+    box-shadow: 3px 5px 2px #dcdcdc;
+    margin: 20px;
+    background: #ffffff;
+}
+/* =========================== */
+
+#user_profile {
+    display: inline-block;
+    align-content: center;
+}
+
+/* =========================== */
+
+.change_disp_name_div{
+    margin: 20px;
+    display: inline-block;
+    background-color: white;
+}
+
+/* =========================== */
+
+.profile_contents {
+    background: #ffffff;
+    width: 600px;
+    height: auto;
+    padding: 20px;
+    box-shadow: 3px 5px 2px #dcdcdc;
+}
+
+/* =========================== */
+
+
+input.text_box{
+    margin-bottom: 10px;
+    width: 100%;
+    height:36px;
+    font-size: 100%;
+}
+.change_btn{
+    font-size: 20px;
+    width: auto;
+    height: auto;
+}
+
+.contents_box{
+    display: inline-block;
+    margin: 20px;
+    align-content: center;
+}
+
+/* =========================== */
+
+.boxMess{
+    font-size: 18px;
+}
+
+/* =========================== */
+
+h1.box_top_text{
+    margin-top: 0px;
+    font-size: 24px;
+}
+
+p.p{
+    text-align: left;
+    font-size: 20px;
+}
+
+/* =========================== */
