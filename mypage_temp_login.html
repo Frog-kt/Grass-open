@@ -1,0 +1,54 @@
+<div id="user_pages">
+    <div id="profile">
+        <div id="user_profile">
+            <div class="changes_box" id="change_disp_name_div">
+                <form class="contents_box" action="./mypage_change_name.php" method="POST" name="update_name_form">
+                    <p id="change_disp_name" class="boxMess">表示名の変更</p>
+                    <input class="text_box" type="text" name="new_disp_name" id="new_disp_name" value="" placeholder="新しい表示名">
+                    <input class="text_box" type="password" name="check_password" placeholder="パスワード">
+                    <input class="change_btn" type="submit" value="変更">
+                </form>
+            </div>
+            <div class="changes_box" id="change_mail_div">
+                <form class="contents_box" action="./mypage_change_mail.php" method="POST" name="update_mail_form">
+                    <p id="change_mail" class="boxMess">メールアドレスの変更</p>
+                    <input class="text_box" type="email" name="new_mail" id="new_mail" placeholder="新しいメールアドレス">
+                    <input class="text_box" type="password" name="check_password" placeholder="パスワード">
+                    <input class="change_btn" type="submit" value="変更">
+                </form>
+            </div>
+
+            <div class="changes_box" id="change_pass_div">
+                <form class="contents_box" action="./mypage_change_pass.php" method="POST" name="update_pass_form">
+                    <p id="change_pass" class="boxMess">パスワードの変更</p>
+                    <input class="text_box" type="password" name="now_pass" id="now_pass" placeholder="現在のパスワード">
+                    <input class="text_box" type="password" name="new_pass1" id="new_pass1" placeholder="新しいパスワード">
+                    <input class="text_box" type="password" name="new_pass2" id="new_pass2" placeholder="もう一度入力">
+                    <input class="change_btn" type="submit" value="変更">
+                </form>
+            </div>
+        </div><br>
+
+        <!-- ユーザー認証情報の変更 -->
+        <div id="change_user_data">
+
+            <div class="profile_contents" id="user_data">
+                <h1 class="box_top_text">ユーザー情報</h1>
+                <div class="data_display">
+                    <p class="p">ユーザーID</p>
+                    <div class="data_display">
+                        <p class="text"><span style="text-decoration: underline">{{user_id}}</span></p>
+                    </div>
+                    <p class="p">ユーザー名</p>
+                    <div class="data_display">
+                        <p class="text"><span style="text-decoration: underline">{{disp_name}}</span></p>
+                    </div>
+                    <p class="p">メールアドレス</p>
+                    <div class="data_display">
+                        <p class="text"><span style="text-decoration: underline">{{user_mail}}</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
