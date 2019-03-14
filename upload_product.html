@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>販売ページ</title>
+    <link rel="stylesheet" href="./style/style_main.css">
+    <link rel="stylesheet" href="./style/style_body.css">
+    <link rel="stylesheet" href="./style/style_header.css">
+    <link rel="stylesheet" href="./style/style_search_bar.css">
+    <link rel="stylesheet" href="style/style_upload_product.css">
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="head">
+            <header>
+                <div id="header_nav">
+                    <a href="main.php"><img src="./img/logo.png" height="90px" alt=""></a>
+                </div>
+            </header>
+            {{head_list}}
+        </div>
+        <main>
+            {{contents}}
+        </main>
+        <footer>
+            <div id="copyright">
+                <sub>© 2018 GRASS</sub>
+            </div>
+        </footer>
+    </div>
+    <script src="./script/jquery-3.3.1.min.js"></script>
+    <script src="./script/masonry.pkgd.min.js" type="text/javascript"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js" type="text/javascript"></script>
+</body>
+
+</html>
