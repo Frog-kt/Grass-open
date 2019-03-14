@@ -1,0 +1,35 @@
+@charset "utf-8";
+
+div#search_bar{
+    clear: both;
+    margin: 20px;
+}
+
+form select#cat1{
+    width: 120px;
+    height: 37px;
+    margin: -3px;
+}
+
+#cat1{
+    border-radius: 3px;
+    font-size: 100%;
+    border: 0px;
+}
+
+#search_text{
+    width:40%;
+    height:36px;
+    border: 0px;
+    border-radius: 5px;
+    font-size: 100%;
+}
+
+#search_button{
+    width:60px;
+    height:38px;
+    padding: 0px;
+    border: 0px;
+    border-radius: 5px;
+    font-size: 100%;
+}
