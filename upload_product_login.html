@@ -1,0 +1,84 @@
+<div id="upload_product">
+    <form id="upload_data_form" action="upload_session.php" method="POST" enctype="multipart/form-data">
+
+        <fieldset>
+            <legend align="left">商品情報</legend>
+
+            <div id="product_name" class="text_box_div">
+                <input type="text" name="product_name" placeholder="商品名 " class="textbox">
+            </div>
+
+            <div id="product_price" class="text_box_div">
+                <input type="number" name="product_price" placeholder="商品価格" class="textbox">
+            </div>
+
+            <div id="product_detail" class="text_box_div">
+                <textarea name="product_detail" placeholder="商品の紹介文   例 : ○○県産のコケを使用したテラリウムセットです" class="textbox"></textarea>
+            </div>
+
+            <div id="product_main_img">
+                <p class="p_youso">トップページ用画像</p>
+                <input type="file" name="img_0" id="img_0" class="product_img">
+            </div>
+
+            <div id="product_sub_img">
+                <p class="p_youso">商品ページ用画像</p>
+                <div id="product_sub_img_upload">
+                    <input type="file" name="img_1" id="img_1" class="sub_img">
+                    <input type="file" name="img_2" id="img_2" class="sub_img">
+                    <input type="file" name="img_3" id="img_3" class="sub_img">
+                </div>
+            </div>
+
+            <div id="product_sub_img">
+                <p class="p_youso">商品カテゴリ(３つまで)</p>
+                <div id="categorys">
+                    <select class="category" name="category_1">
+                        <option value="">--カテゴリ１--</option>
+                        <option value="1">盆栽</option>
+                        <option value="2">苔</option>
+                        <option value="3">水草</option>
+                        <option value="4">多肉植物</option>
+                        <option value="5">観葉植物</option>
+                        <option value="6">装飾品</option>
+                        <option value="7">容器・水槽</option>
+                        <option value="8">その他</option>
+                        <option value="9">プレミアム</option>
+                    </select>
+
+                    <select class="category" name="category_2">
+                        <option value="">--カテゴリ２--</option>
+                        <option value="1">盆栽</option>
+                        <option value="2">苔</option>
+                        <option value="3">水草</option>
+                        <option value="4">多肉植物</option>
+                        <option value="5">観葉植物</option>
+                        <option value="6">装飾品</option>
+                        <option value="7">容器・水槽</option>
+                        <option value="8">その他</option>
+                        <option value="9">プレミアム</option>
+                    </select>
+
+                    <select class="category" name="category_3">
+                        <option value="">--カテゴリ３--</option>
+                        <option value="1">盆栽</option>
+                        <option value="2">苔</option>
+                        <option value="3">水草</option>
+                        <option value="4">多肉植物</option>
+                        <option value="5">観葉植物</option>
+                        <option value="6">装飾品</option>
+                        <option value="7">容器・水槽</option>
+                        <option value="8">その他</option>
+                        <option value="9">プレミアム</option>
+                    </select>
+                </div>
+            </div>
+        </fieldset>
+
+        <p>
+            <a href="./kiyaku.html">規約</a>に同意する
+            <input type="checkbox">
+            <input type="submit" value="投稿する">
+        </p>
+    </form>
+</div>
