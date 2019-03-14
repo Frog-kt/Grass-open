@@ -1,0 +1,67 @@
+@charset "utf-8";
+
+
+main{
+    display: inline-block;
+    width: 50%;
+    min-width: 800px;
+    max-width: 1200px;
+}
+
+fieldset{
+    margin-bottom: 20px;
+}
+
+div#product_sub_img{
+    display: block;
+    margin: 20px;
+}
+
+input.sub_img{
+    margin: 10px;
+}
+
+div#product_sub_img_upload{
+    display: inline-block;
+    align-content: center;
+}
+
+input.sub_img{
+    display: block;
+}
+
+div#categorys{
+    display: inline-block;
+}
+
+select.category{
+    display: block;
+    margin-bottom: 5px;
+}
+
+fieldset{
+    font-size: 24px;
+}
+
+.text_box_div{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+textarea{
+    resize: vertical;
+    height: 80px;
+}
+
+.textbox{
+    font-size: 16px;
+    width: 600px;
+}
+
+input.textbox{
+    height: 30px;
+}
+
+p.p_youso{
+    font-size: 20px;
+}
