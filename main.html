@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>GRASS</title>
+    <link rel="stylesheet" href="./style/style_main.css">
+    <link rel="stylesheet" href="./style/style_product.css">
+    <link rel="stylesheet" href="./style/modaal.css">
+    <link rel="stylesheet" href="./style/style_body.css">
+    <link rel="stylesheet" href="./style/style_header.css">
+    <link rel="stylesheet" href="./style/style_search_bar.css">
+</head>
+
+<body>
+
+    <div id="wrapper">
+        <div id="head">
+            <header>
+                <div id="header_nav">
+                    <a href="main.php"><img src="./img/logo.png" height="90px" alt=""></a>
+                </div>
+            </header>
+            {{head_list}}
+        </div>
+        <main>
+            <div class="main_content">
+                <ul class="products" id="grid">
+
+                </ul>
+            </div>
+            <button id="next_btn">
+                NEXT
+            </button>
+        </main>
+        <footer>
+            <div id="copyright">
+                <sub>© 2018 GRASS</sub>
+            </div>
+        </footer>
+    </div>
+
+    <script src="./script/jquery-3.3.1.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js" type="text/javascript"></script>
+    <script>
+        //最初に商品を取得する
+        var product_id = 0;
+        $.ajax({
+                url: './get_product_datas.php',
+                type: 'POST',
+                datatype: "json",
+                data: {
+                    'acquired_product_id': 0
+                }
+            })
+            .done((data) => {
+                for (var i = (data['product_data_array'].length - 1); i >= 0; i--) {
+                    console.log(data);
+                    GenHTML(data['product_data_array'][i]['id'],
+                        data['product_data_array'][i]['product_id'],
+                        data['product_data_array'][i]['name'],
+                        data['product_data_array'][i]['price'],
+                        data['product_data_array'][i]['exhibitor'],
+                        data['product_data_array'][i]['top_img_path'],
+                        '★★★☆☆')
+                }
+                product_id = parseInt(data['product_data_array'][0]['id']) - 1
+            })
+            .fail((data) => {
+                swal({
+                    title: "Error",
+                    text: "Ajaxでエラーが発生しました。",
+                    icon: "warning",
+                });
+            })
+
+        //次の商品を取得する
+        $('#next_btn').click(
+            function () {
+                $.ajax({
+                        url: './get_product_datas.php',
+                        type: 'POST',
+                        datatype: "json",
+                        data: {
+                            'acquired_product_id': product_id
+                        }
+                    })
+                    .done((data) => {
+                        for (var i = (data['product_data_array'].length - 1); i >= 0; i--) {
+                            GenHTML(data['product_data_array'][i]['id'],
+                                data['product_data_array'][i]['product_id'],
+                                data['product_data_array'][i]['name'],
+                                data['product_data_array'][i]['price'],
+                                data['product_data_array'][i]['exhibitor'],
+                                data['product_data_array'][i]['top_img_path'],
+                                '★★★☆☆')
+                        }
+                        product_id = parseInt(data['product_data_array'][0]['id']) - 1
+                    })
+                    .fail((data) => {
+                        swal({
+                            title: "Error",
+                            text: "Ajaxでエラーが発生しました。",
+                            icon: "warning",
+                        });
+                    })
+            }
+        );
+
+        // 変数のデータをもとにHTMLデータを生成する関数
+        function GenHTML(id, product_id, product_name, product_price, user_name, img_path, evaluation) {
+
+            // ここに変数を代入して出力させる
+            var temp_html = '\
+            <li class="grid-item" id="content_' + id +
+                '">\
+                <div class="product">\
+                    <div class="img_box">\
+                        <a class="image_lo" href="product_page.php?product_id=' +
+                product_id +
+                '"><img class="product_img" src="'+ img_path +'" alt="image"></a>\
+                    </div>\
+                    <div class="texts">\
+                        <p class="product_name">' +
+                product_name + '</p>\
+                        <p class="product_price">' + product_price +
+                '円</p>\
+                        <div class="user_info">\
+                            <p class="bot_contents user_name">' +
+                user_name + '</p>\
+                            <p class="bot_contents user_evaluation">' + evaluation +
+                '</p>\
+                        </div>\
+                    </div>\
+                </div>\
+            </li>\
+        ';
+            $('.products').append(temp_html);
+        }
+    </script>
+</body>
+
+</html>
