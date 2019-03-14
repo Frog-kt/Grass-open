@@ -1,0 +1,103 @@
+@charset "utf-8";
+
+/*
+signup.html用のCSSです
+*/
+
+
+/* ============================== */
+body {
+    font-size: 14px;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    background-color: whitesmoke;
+    margin: 0px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* すべてのセクションのCSS */
+section {
+    width: 100%;
+    height: 98vh;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+section:nth-of-type(1) {
+    background: url(../img/1.png) 0 0 / cover no-repeat;
+    background-attachment: fixed;
+}
+
+
+/* p */
+div p{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 28px;
+    color: whitesmoke;
+    text-shadow: 2px 2px 4px #444444;
+}
+
+
+/* form */
+section form{
+    padding: 20px;
+    background-color: rgba(192, 192, 192, 0.479);
+    border-radius: 10px;
+}
+div h1{
+    font-size: 126px;
+    margin: 5px;
+    color: whitesmoke;
+    text-shadow: 2px 2px 4px #444444;
+}
+/* 入力フォーム */
+input.input_form{
+    width: 450px;
+    height: 40px;
+    font-size: 28px;
+    border-radius: 10px;
+}
+/* 送信ボタン */
+input.submit_btn{
+    margin-top: 20px;
+    width: 454px;
+    height: 45px;
+    font-size: 28px;
+    border-radius: 10px;
+}
+
+
+/* 送信ボタン */
+input.submit_btn{
+    margin-top: 20px;
+    width: 454px;
+    height: 45px;
+    font-size: 28px;
+    border-radius: 10px;
+    background-color: #c0ffa0a6;
+    filter: drop-shadow(2px 2px 4px gray);
+}
+input.submit_btn:hover{
+    margin-top: 20px;
+    width: 454px;
+    height: 45px;
+    font-size: 28px;
+    border-radius: 10px;
+    background-color: #97ff64c7;
+    filter: drop-shadow(2px 2px 4px gray);
+
+}
+/* ===== footer ===== */
+footer{
+    width: 100%;
+    display: inline-block;
+}
+footer div{
+    text-align: center;
+}
+footer div small{
+    font-size: 14px;
+}
