@@ -1,0 +1,10 @@
+@charset "utf-8";
+
+main{
+    display: block;
+    align-content: center;
+}
+
+table {
+    display: inline-block;
+}
