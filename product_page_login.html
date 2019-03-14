@@ -1,0 +1,45 @@
+<div id="upload_product_forms">
+    <div id="product_title">
+        <h1 class="title">{{product_title}}</h1>
+    </div>
+    <div id="product_price">
+        <p id="price"> {{price}}</p>
+    </div>
+    <div id="images">
+        {{img1}}
+        {{img2}}
+        {{img3}}
+        {{img4}}
+    </div>
+    <div id="product_detail">
+        <h2 class="sub_title">商品説明</h2>
+        <hr size="3" color="black">
+        <p id="user_detail">{{user_detail}}</p>
+    </div>
+    <div id="product_category">
+        <h2 class="sub_title">カテゴリ</h2>
+        <hr size="3" color="black">
+        <div class="cont">
+            <p class="category_name">{{category_name1}}</p>
+            <p class="category_name">{{category_name2}}</p>
+            <p class="category_name">{{category_name3}}</p>
+        </div>
+    </div>
+    <div id="seller_info">
+        <h2 class="sub_title">出品者情報</h2>
+        <hr size="3" color="black" ;>
+        <p>ユーザー名：{{user_name}}</p>
+        <p>過去の取引数：{{transaction_count}}</p>
+        <p>ユーザーの評価：{{user_assessment}}</p>
+        <hr size="3" color="black" ;>
+    </div>
+    <div id="buy_btn">
+        <form action="./payment.php" method="GET">
+            <input name="product_id" id="product_id" value="{{product_id}}" hidden>
+            <input name="product_name" id="product_name" value="{{product_name}}" hidden>
+            <input name="product_price" id="producat_price" value="{{product_price}}" hidden>
+            <input name="product_exhibitor" id="product_exhibitor" value="{{product_exhibitor}}" hidden>
+            <input class="buy_btn" type="submit" id="buy_btn" value="購入">
+        </form>
+    </div>
+</div>
