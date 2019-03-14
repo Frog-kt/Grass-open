@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="content-language" content="ja">
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <link rel="stylesheet" href="./style/style_index.css">
+    <link rel="stylesheet" href="./style/modaal.css">
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
+    <title>GRASS</title>
+</head>
+
+<body>
+    <main>
+        <section>
+            <div class="head_item" id="head_logo">
+                <a href="./"><img id="logo" src="./img/logo.png" alt="logo" height="400px"></a>
+            </div>
+        </section>
+        <section>
+            <div>
+                <h1 class="h1_s">What is GRASS?</h1>
+                <p class="s_text">GRASSは、様々な種類の植物を売買できるサービスです。</p>
+            </div>
+        </section>
+        <section>
+            <div>
+                <h1 class="h1_s">Scene</h1>
+                <p class="s_text">オフィス、リビング、デスクなどにひと時の癒しを</p>
+            </div>
+        </section>
+        <section>
+            <div>
+                <h1 class="h1_s" id="tp">Explore</h1>
+                <ul>
+                    <li><a href="#modal" class="modal">ログイン</a></li>
+                    <li><a href="signup.php" class="signup">新規登録</a></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <div id="modal" style="display:none;">
+        <div>
+            <h1 id="container">LOGIN</h1>
+        </div>
+        <form name="login_form" method="post">
+            <div class="form" id="user_form">
+                <p class="p-tag">UserID</p>
+                <input type="text" class="input_form" name="user_id" id="user_id">
+            </div>
+            <div class="form" id="pass_form">
+                <p class="p-tag">Password</p>
+                <input type="password" class="input_form" name="user_pass" id="user_pass">
+            </div>
+            <input type="button" class="submit_btn" id="submit_btn" value="ログイン">
+        </form>
+    </div>
+
+    <footer>
+        <div>
+            <small>Copyright 🄫 2018 Takumi Kasuo All Rights Reserved.</small>
+        </div>
+    </footer>
+
+    <script src='//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="./script/modaal.js"></script>
+    <script>
+        $('.modal').modaal();
+    </script>
+    <script>
+        //ログイン処理用のAjax
+        document.getElementById('submit_btn').onclick = function () {
+            $.ajax({
+                    url: './login.php',
+                    type: 'POST',
+                    datatype: "json",
+                    data: {
+                        'login_id': $('#user_id').val(),
+                        'login_pass': $('#user_pass').val()
+                    }
+                })
+                .done((data) => {
+                    if (data['auth'] === true) { //後で変えること！！！！
+                        swal({
+                            title: "Success",
+                            icon: "success",
+                            button: "メインページ"
+                        })
+                        setTimeout(
+                            function () {
+                                window.location.href = './main.php'
+                            }, 1600)
+
+                    } else if (data['auth'] === false) {
+
+                        swal({
+                            title: "Error",
+                            text: "IDもしくはパスワードが違います",
+                            icon: "warning",
+                        })
+
+                    } else {
+
+                        swal({
+                            title: "Error",
+                            text: "不明なエラーです",
+                            icon: "warning",
+                        })
+                    }
+                })
+
+                .fail((data) => {
+
+                    swal({
+                        title: "Error",
+                        text: "Ajaxでエラーが発生しました。",
+                        icon: "warning",
+                    });
+                })
+        }
+    </script>
+
+</body>
+
+</html>
