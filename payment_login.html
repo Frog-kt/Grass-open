@@ -1,0 +1,88 @@
+<div id="private_data" class="form">
+        <form class="back" action="payment_session.php" method="POST">
+            <fieldset>
+    
+                <legend align="left">配送情報</legend>
+    
+                <div>
+                    <input type="text" name="delivery_name" id="delivery_name" class="text_area" placeholder="氏名">
+                </div>
+    
+                <div>
+                    <input type="text" name="delivery_post_address" id="delivery_post_address" class="text_area"
+                        placeholder="郵便番号(ハイフンを含む)">
+                </div>
+    
+                <div>
+                    <input type="email" name="delivery_email" id="delivery_email" class="text_area" placeholder="連絡用メールアドレス">
+                </div>
+    
+                <div>
+                    <input type="text" name="delivary_s_address" id="delivery_s_address" class="text_area" placeholder="お届け先住所">
+                </div>
+    
+                <div>
+                    <input type="text" name="delivary_address" id="delivary_address" class="text_area" placeholder="番地 建物名 部屋番号">
+                </div>
+    
+                <div>
+                    <textarea name="sub" id="sub" class="text_box" placeholder="備考"></textarea>
+                </div>
+    
+            </fieldset>
+    
+            <fieldset>
+                <legend align="left">支払い情報</legend>
+    
+                <div>
+                    <input type="tel" name="card_number" id="card_number" class="text_area" placeholder="カード番号" maxlength="16">
+                </div>
+    
+                <div>
+                    <input type="text" name="card_name" id="card_name" class="text_area" placeholder="カード名義">
+                </div>
+    
+                <div id="sec_code_mm_yy">
+                    <input type="password" name="sec_code" id="sec_code" class="text_area_mini" placeholder="セキュリティコード"
+                        maxlength="3">
+                    <select name="MM" id="MM" class="selecter">
+                        <option value>MM</option>
+                        <option value="1">01</option>
+                        <option value="2">02</option>
+                        <option value="3">03</option>
+                        <option value="4">04</option>
+                        <option value="5">05</option>
+                        <option value="6">06</option>
+                        <option value="7">07</option>
+                        <option value="8">08</option>
+                        <option value="9">09</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
+    
+                    <select name="YY" id="YY" class="selecter">
+                        <option value>YY</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                    </select>
+                </div>
+            </fieldset>
+            <input name="product_id" id="product_id" value="{{product_id}}" hidden>
+            <input name="product_name" id="product_name" value="{{product_name}}" hidden>
+            <input name="product_price" id="producat_price" value="{{product_price}}" hidden>
+            <input name="product_exhibitor" id="product_exhibitor" value="{{product_exhibitor}}" hidden>
+            <input id="pay_check" type="submit" value="購入する">
+        </form>
+    </div>
