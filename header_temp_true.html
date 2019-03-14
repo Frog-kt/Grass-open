@@ -1,0 +1,29 @@
+<div id="user_data_div">
+    <nav id="user_data_nav">
+        <ul id="head_userpages">
+            <li id="head_item"><a href="main.php">メインページ</a></li>
+            <li id="head_item"><a href="mypage.php">マイページ</a></li>
+            <li id="head_item"><a href="upload_product.php">販売ページ</a></li>
+            <!--<li id="head_item"><a href="favorite.php">お気に入り</a></li>-->
+            <li id="head_item"><a href="oder_history.php">注文履歴</a></li>
+        </ul>
+    </nav>
+</div>
+<div id="search_bar">
+    <form id="search_form" method="GET" action="./search.php">
+        <select id="cat1" name="category">
+            <option value="">--カテゴリ--</option>
+            <option value="1">盆栽</option>
+            <option value="2">苔</option>
+            <option value="3">水草</option>
+            <option value="4">多肉植物</option>
+            <option value="5">観葉植物</option>
+            <option value="6">装飾品</option>
+            <option value="7">容器・水槽</option>
+            <option value="8">その他</option>
+            <option value="9">プレミアム</option>
+        </select>
+        <input id="search_text" type="text" name="search_text" placeholder="商品名で検索">
+        <input id="search_button" type="submit" name="search_button" value="検索">
+    </form>
+</div>
